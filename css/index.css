@@ -1,0 +1,70 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 22 oct. 2020, 15:59:13
+    Author     : arielrubi
+*/
+body, html{
+
+}
+label{
+    font-size: 14px;
+}
+.form-control { 
+    border-bottom: 2px solid #00377B;
+    border-top: none; 
+    border-left: none;
+    border-right: none;
+    border-radius: 0px !important;
+    outline: none;
+}
+.form-control:focus { 
+    border-bottom: 3px solid #00377B; 
+    box-shadow :none !important;
+}
+.text-danger{
+}
+#btnSolicitar{ 
+    background: #00377B;
+    position: relative;
+    min-width: 170px !important;
+    margin: 0 auto !important;
+    color: #FFFFFF;
+    display: block;
+    line-height: 0 !important;
+    height: 40px;
+}
+.text-danger {
+    color: red;
+    font-size: 15px;
+    font-weight: bold;
+}
+@media (max-width: 1400px){
+
+}
+@media (max-width: 1160px){
+
+}
+@media (max-width: 1050px){
+
+}
+@media (max-width: 990px){
+
+}
+@media (max-width: 860px){
+
+}
+@media (max-width: 576px){
+
+}
+@media (max-width: 380px){
+
+    #emailHelp {
+        font-size: 11px;
+        padding-left: 0px !important;
+    }
+
+}
