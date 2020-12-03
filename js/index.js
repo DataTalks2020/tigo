@@ -165,7 +165,6 @@ $('#btnSolicitar').on('click', function () {
     var otro = $('#otro').val();
     var texto = '';
     var numero = /^[0-9]+$/;
-    texto = '';
     $('#errorTipoTarj').addClass('d-none');
     $('#errorTipoIden').addClass('d-none');
     $('#errorIden').addClass('d-none');
@@ -173,6 +172,23 @@ $('#btnSolicitar').on('click', function () {
     $('#errorApe').addClass('d-none');
     $('#errorTel').addClass('d-none');
     $('#errorEmail').addClass('d-none');
+    texto = '';
+    if (condominios == '' || condominios == 0 || condominios.length == 0) {
+        texto = 'Seleccione un Condominio';
+        $('#errorCondomi').text(texto);
+        $('#errorCondomi').removeClass('d-none');
+        return false;
+    }
+    if (condominios == 'Otro') {
+          texto = '';
+        if (otro == '' || otro == 0 || otro.length == 0) {
+            texto = 'Ingrese un otro condominio';
+            $('#errorOtro').text(texto);
+            $('#errorOtro').removeClass('d-none');
+            return false;
+        }
+    }
+
     texto = '';
     if (tipo == '' || tipo == 0 || tipo.length == 0) {
         texto = 'Seleccione un Tipo de indentificación';
@@ -265,22 +281,6 @@ $('#btnSolicitar').on('click', function () {
         $('#errorEmail').removeClass('d-none');
         return false;
     }
-    texto = '';
-    if (condominios == '' || condominios == 0 || condominios.length == 0) {
-        texto = 'Seleccione un Condominio';
-        $('#errorCondomi').text(texto);
-        $('#errorCondomi').removeClass('d-none');
-        return false;
-    }
-    if (condominios == 'Otro') {
-        if (otro == '' || otro == 0 || otro.length == 0) {
-            texto = 'Ingrese un otro condominio';
-            $('#errorOtro').text(texto);
-            $('#errorOtro').removeClass('d-none');
-            return false;
-        }
-    }
-
     //limpiarFormulario();
     //location.href = 'exito.html';
 
