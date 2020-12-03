@@ -144,6 +144,16 @@ $('#email').on('keyup', function () {
     return false;
 });
 
+$('#condominios').on('change', function () {
+    var id = $(this).val();
+    if (id == 'Otro') {
+        $('.otros').removeClass('d-none');
+    } else {
+        $('.otros').addClass('d-none');
+    }
+    return false;
+});
+
 $('#btnSolicitar').on('click', function () {
     var tipo = $('#tipoidentificacion').val();
     var identificacion = $('#identificacion').val();
@@ -152,6 +162,7 @@ $('#btnSolicitar').on('click', function () {
     var nombre = $('#nombre').val();
     var apellido = $('#apellido').val();
     var condominios = $('#condominios').val();
+    var otro = $('#otro').val();
     var texto = '';
     var numero = /^[0-9]+$/;
     texto = '';
@@ -260,6 +271,14 @@ $('#btnSolicitar').on('click', function () {
         $('#errorCondomi').text(texto);
         $('#errorCondomi').removeClass('d-none');
         return false;
+    }
+    if (condominios == 'Otro') {
+        if (otro == '' || otro == 0 || otro.length == 0) {
+            texto = 'Ingrese un otro condominio';
+            $('#errorOtro').text(texto);
+            $('#errorOtro').removeClass('d-none');
+            return false;
+        }
     }
 
     //limpiarFormulario();
